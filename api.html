@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Warehouse JSON Data</title>
+  <!-- Include highlight.js CSS theme -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #1e1e1e;
+      color: #ddd;
+      margin: 0;
+      padding: 20px;
+    }
+    h2 {
+      color: #61dafb;
+      font-weight: 500;
+    }
+    pre {
+      border-radius: 8px;
+      padding: 20px;
+      overflow-x: auto;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Warehouse JSON Data</h2>
+  <pre><code id="json-display" class="json"></code></pre>
+
+  <!-- Include highlight.js library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script>
+    const jsonData = {
+      "@odata.context": "http://102.216.144.5:7048/KLL/api/KLL/WH/v2.0/$metadata#companies(97427d7c-e171-f011-bf85-000c29b40b45)/WHItems",
+      "value": [
+        {
+          "@odata.etag": "W/\"JzIwOzEwMjg0Njk4MjQ2MTA0MTkxNDk0MTswMDsn\"",
+          "id": 1,
+          "runId": "26eaf5c8-cf83-4bf0-858a-2255ec09e67d",
+          "summary_customers": 4,
+          "summary_distinctItems": 19,
+          "summary_rowsReceived": 86,
+          "customers": [
+            {
+              "@odata.etag": "W/\"JzE5OzgxNDU0MTE0MDQyODM0NDkxODUxOzAwOyc=\"",
+              "entryID": 1,
+              "runId": "26eaf5c8-cf83-4bf0-858a-2255ec09e67d",
+              "customer_code": "PISTON",
+              "customerName": "Piston Medical Services",
+              "items": [
+                {
+                  "@odata.etag": "W/\"JzIwOzEzNDAzNzIzMTk5NDYyMjQ4ODk0MTswMDsn\"",
+                  "entryID": 1,
+                  "runId": "26eaf5c8-cf83-4bf0-858a-2255ec09e67d",
+                  "item_no": "ITM_KL_0099",
+                  "item_name": "IV Fluids",
+                  "total_customer_inventory": 100,
+                  "UoM": "PCS",
+                  "has_negative_quantities": false,
+                  "variants": [
+                    {
+                      "runId": "af5c8-cf83-4bf0-858a-2255ec09e67d",
+                      "VarientCode": "IVF_GV",
+                      "description": "Government Pack",
+                      "batches": [
+                        {
+                          "runId": "8-cf83-4bf0-858a-2255ec09e67d",
+                          "batchNo": "BATCH-001",
+                          "expiryDate": "2027-12-31",
+                          "locations": [
+                            {
+                                "runId": "4bf0-858a-2255ec09e67d",
+                              "locationCode": "3PL-WH-BKL",
+                              "locationName": "3PL KLA-BWEYOGERERE WHS",
+                              "qty": 30
+                            },
+                            {
+                              "runId": "858a-225c09e67d",
+                              "locationCode": "GIT",
+                              "locationName": "VIRTUAL-GOODS IN TRANSIT WH",
+                              "qty": 20
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                        "runId": "xgxhhxhxcf83-4bf0-858a-2255ec09e67d",
+
+                      "variantCode": "IVF_PP",
+                      "description": "Private Pack",
+                      "batches": [
+                        {
+                            "runId": "8i8s8hsvxfcf83-4bf0-858a-2255ec09e67d",
+                          "batchNo": "BATCH-002",
+                          "expiryDate": "2027-10-15",
+                          "locations": [
+                            {
+                              "runId": "4iiiisishfsbf0-858a-2255ec09e67d",
+                              "locationCode": "3PL-WH-BKL",
+                              "locationName": "3PL KLA-BWEYOGERERE WHS",
+                              "qty": 50
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    };
+
+    // Format JSON with indentation
+    const formatted = JSON.stringify(jsonData, null, 2);
+    document.getElementById("json-display").textContent = formatted;
+
+    // Apply syntax highlighting
+    hljs.highlightAll();
+  </script>
+</body>
+</html>
